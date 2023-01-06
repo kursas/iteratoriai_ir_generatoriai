@@ -1,0 +1,24 @@
+#Parašykite generatorių, kuris kaskartą inicijuotas su funkcija next grąžintų
+#sekantį porinį skaičių. Pirmas sk. 2, toliau 4 ir taip be pabaigos.
+
+def get_even(start, end):
+  for i in range (start, end +1):
+    if i % 2 == 0:
+      yield(i)
+for num in get_even(1, 20):
+  print(f'lyginis skaicius:{num}')
+  
+  #output
+  
+  lyginis skaicius:2
+lyginis skaicius:4
+lyginis skaicius:6
+lyginis skaicius:8
+lyginis skaicius:10
+lyginis skaicius:12
+lyginis skaicius:14
+lyginis skaicius:16
+lyginis skaicius:18
+lyginis skaicius:20
+
+Process finished with exit code 0
