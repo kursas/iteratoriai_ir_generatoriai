@@ -1,0 +1,42 @@
+# -*- coding:utf-8 -*-
+# Parašykite generatorų , kuris kas kartą generuotų po vieną Fibonačio sekos skaičių. (Seka prasideda šiais
+# skaičiais: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233. Kiekvienas šios sekos skaičius
+# lygus dviejų prieš jį einančių skaičių sumai, daugiau google:)
+
+def fibonacciGenerator():
+    a = 0
+    b = 1
+    for i in range(13):
+        yield b
+        a, b = b, a + b
+obj = fibonacciGenerator()
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+
+#output
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+
+Process finished with exit code 0
