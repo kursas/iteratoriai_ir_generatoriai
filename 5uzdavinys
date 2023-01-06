@@ -1,0 +1,26 @@
+# -*- coding:utf-8 -*-
+#kaip skiriasi laikas sugeneruot 1_000_000 items lista su (list comprehension)  ir kaip su (generatorium)
+import time()
+import itertools
+
+start_time = time.time()
+
+list_of_cubes = [x ** 3 for x in range(1_000_000)]
+delta_time = time.time() - start_time
+print(f'List of cubes created in {delta_time:.2f} seconds')
+
+start_time = time.time()
+cube_generator = (x ** 3 for x in range(1_000_000))
+delta_time = time.time() - start_time
+print(f'Generator of cubes took {delta_time:.2f} seconds')
+
+print(list_of_cubes[:15])
+print(list(itertools.islice(cube_generator, 15)))
+
+#output
+List of cubes created in 0.26 seconds
+Generator of cubes took 0.00 seconds
+[0, 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728, 2197, 2744]
+[0, 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728, 2197, 2744]
+
+Process finished with exit code 0
